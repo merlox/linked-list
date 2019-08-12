@@ -120,7 +120,7 @@ class SinglyLinkedList:
                 break
             previous_node = current_node
             current_node = next_node
-            next_node = current_node.next
+            next_node = current_node.next if current_node else None
         if not found:
             print('Node not found')
         else:
