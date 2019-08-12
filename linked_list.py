@@ -105,19 +105,26 @@ class SinglyLinkedList:
         previous_node = None
         current_node = self.head
         next_node = current_node.next
+        found = False
         for i in range(self.size()):
             if self.head.data == data:
+                found = True
                 if self.head.next != None:
                     self.head = next_node
                 else:
                     self.head = None
                 break
             elif current_node.data == data:
+                found = True
                 previous_node.next = next_node
                 break
             previous_node = current_node
             current_node = next_node
             next_node = current_node.next
+        if not found:
+            print('Node not found')
+        else:
+            print('Element deleted successfully')
 
 N1 = Node(10)
 N2 = Node(20)
