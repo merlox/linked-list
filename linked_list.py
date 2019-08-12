@@ -126,6 +126,13 @@ class SinglyLinkedList:
         else:
             print('Element deleted successfully')
 
+    def delete_larger_than(self, limit):
+        current_node = self.head
+        for i in range(self.size()):
+            if current_node.data > limit:
+                self.delete(current_node.data)
+            current_node = current_node.next
+
 N1 = Node(10)
 N2 = Node(20)
 N3 = Node(30)
@@ -135,3 +142,5 @@ N5 = Node(50)
 list = SinglyLinkedList(N1)
 list.prepend(N2)
 list.prepend(N3)
+list.prepend(N4)
+list.prepend(N5)
