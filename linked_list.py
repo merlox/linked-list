@@ -75,6 +75,9 @@ class SinglyLinkedList:
     def insert(self, new_node, position):
         """
         Inserts a node in the position of your choice or at the end if it exceeds the size of it
+        Insertion takes O(1) time
+        Finding the node takes O(n) time
+        That's why the overal performance is O(n)
         """
         if position == 0:
             self.prepend(new_node)
