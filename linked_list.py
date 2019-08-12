@@ -97,6 +97,28 @@ class SinglyLinkedList:
             previous_node = next_node
             next_node = next_node.next
 
+    def delete(self, data):
+        """
+        Deletes the first node that finds with the selected data or None if not found
+        Takes O(n) overall because finding the node to delete is a Linear Time operation
+        """
+        previous_node = None
+        current_node = self.head
+        next_node = current_node.next
+        for i in range(self.size()):
+            if self.head.data == data:
+                if self.head.next != None:
+                    self.head = next_node
+                else:
+                    self.head = None
+                break
+            elif current_node.data == data:
+                previous_node.next = next_node
+                break
+            previous_node = current_node
+            current_node = next_node
+            next_node = current_node.next
+
 N1 = Node(10)
 N2 = Node(20)
 N3 = Node(30)
