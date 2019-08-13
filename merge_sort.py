@@ -11,6 +11,11 @@ def merge_sort(list):
     for the entire list.
     Now because we are also using merge, which is a Linear Time operation O(n), the resulting
     runtime of merge_sort is O(n log n)
+    But because the split [:] function in python takes O(k), the entire costs is:
+    O(nk log n)
+
+    The space complexity is N because we keep all the elements at the same time once in memory in the worst case
+    Linear Space Complexity O(n)
     '''
 
     if len(list) <= 1:
