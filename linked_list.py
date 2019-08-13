@@ -72,6 +72,17 @@ class SinglyLinkedList:
             current = current.next
         return None
 
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+            while position < index:
+                position += 1
+                current = current.next
+            return current
+
     def insert(self, new_node, position):
         """
         Inserts a node in the position of your choice or at the end if it exceeds the size of it
@@ -132,15 +143,3 @@ class SinglyLinkedList:
             if current_node.data > limit:
                 self.delete(current_node.data)
             current_node = current_node.next
-
-N1 = Node(10)
-N2 = Node(20)
-N3 = Node(30)
-N4 = Node(40)
-N5 = Node(50)
-
-list = SinglyLinkedList(N1)
-list.prepend(N2)
-list.prepend(N3)
-list.prepend(N4)
-list.prepend(N5)
