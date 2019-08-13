@@ -3,6 +3,7 @@ from linked_list import Node, SinglyLinkedList
 def merge_sort(list):
     '''
     Splits the linked list into halves and sorts them recursively
+    Takes O(kn log n) runtime because you are splitting repeatedly and merging with loops
     '''
 
     # The last element is a single node, we know that because it doesn't contain a next node
