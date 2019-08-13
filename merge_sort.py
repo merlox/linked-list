@@ -1,13 +1,16 @@
 # -*- encoding: utf-8 -*-
 
-import math
-
 def merge_sort(list):
     '''
     Sorts a list using the merge sort algorithm, the steps are the following:
     Divide: divides the list into subarrays by halving each part
     Compare: compares each subarray to its closest neighbour
     Join: joins the list back and sorts again for the subsets
+
+    Splitting recursively is a Logarithmic Time operation O(log n) because we are splitting in halves
+    for the entire list.
+    Now because we are also using merge, which is a Linear Time operation O(n), the resulting
+    runtime of merge_sort is O(n log n)
     '''
 
     if len(list) <= 1:
@@ -20,12 +23,20 @@ def merge_sort(list):
     return merge(left, right)
 
 def split(list):
+    '''
+    Returns the split array
+    This is a constant time operation O(1)
+    '''
     midpoint = len(list) / 2
     left = list[:midpoint]
     right = list[midpoint:]
     return left, right
 
 def merge(a, b):
+    '''
+    Receives two arrays, sorts them based on size and merges them
+    This is a Linear Time operation O(n) because in the worst case we have to check every element
+    '''
     sorted = []
     left_index = 0
     right_index = 0
@@ -54,6 +65,8 @@ def verify_list(list):
     '''
     Verify that a list is correctly sorted recursively
     It checks each pair of elements, then moves to the next pair recursively until it's complete
+
+    This is a Linear Runtime operation O(n) because we need to check every single element
     '''
     # Check the first 2 elements, delete the first one
     if len(list) <= 1:
