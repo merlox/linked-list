@@ -9,7 +9,7 @@ fn is_anagram(string_one: String, string_two: String) -> bool {
     if merge_sort(&string_one) == merge_sort(&string_two) {
         result = true;
     }
-    return result;
+    result
 }
 
 fn merge_sort(my_string: &String) -> String {
@@ -48,5 +48,5 @@ fn merge_sort(my_string: &String) -> String {
         right_index += 1;
     }
 
-    return sorted_string;
+    sorted_string
 }
