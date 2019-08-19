@@ -6,21 +6,21 @@ fn main() {
 
 fn is_anagram(string_one: String, string_two: String) -> bool {
     let mut result = false;
-    if merge_sort(string_one) == merge_sort(string_two) {
+    if merge_sort(&string_one) == merge_sort(&string_two) {
         result = true;
     }
     return result;
 }
 
-fn merge_sort(my_string: String) -> String {
+fn merge_sort(my_string: &String) -> String {
     if my_string.len() <= 1 {
-        return my_string;
+        return String::from(my_string);
     }
 
     let mut sorted_string = String::from("");
     let mid = my_string.len() / 2;
-    let left = merge_sort(String::from(&my_string[..mid]));
-    let right = merge_sort(String::from(&my_string[mid..]));
+    let left = merge_sort(&String::from(&my_string[..mid]));
+    let right = merge_sort(&String::from(&my_string[mid..]));
     let mut left_index = 0;
     let mut right_index = 0;
 
